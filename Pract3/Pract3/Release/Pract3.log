@@ -1,0 +1,22 @@
+﻿  Source.cpp
+c:\users\arsamrei\source\repos\pract3\pract3\source.cpp(48): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+c:\users\arsamrei\source\repos\pract3\pract3\source.cpp(55): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+c:\users\arsamrei\source\repos\pract3\pract3\source.cpp(56): warning C4477: 'printf' : la cadena de formato '%d' requiere un argumento de tipo 'int', pero el argumento variádico 1 tiene el tipo 'double'
+c:\users\arsamrei\source\repos\pract3\pract3\source.cpp(56): warning C4477: 'printf' : la cadena de formato '%d' requiere un argumento de tipo 'int', pero el argumento variádico 2 tiene el tipo 'double'
+c:\users\arsamrei\source\repos\pract3\pract3\source.cpp(58): warning C4244: 'argumento': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+c:\users\arsamrei\source\repos\pract3\pract3\source.cpp(61): warning C4244: 'argumento': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+c:\users\arsamrei\source\repos\pract3\pract3\source.cpp(68): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+c:\users\arsamrei\source\repos\pract3\pract3\source.cpp(69): warning C4477: 'printf' : la cadena de formato '%d' requiere un argumento de tipo 'int', pero el argumento variádico 1 tiene el tipo 'double'
+c:\users\arsamrei\source\repos\pract3\pract3\source.cpp(69): warning C4477: 'printf' : la cadena de formato '%d' requiere un argumento de tipo 'int', pero el argumento variádico 2 tiene el tipo 'double'
+c:\users\arsamrei\source\repos\pract3\pract3\source.cpp(71): warning C4244: 'argumento': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+c:\users\arsamrei\source\repos\pract3\pract3\source.cpp(74): warning C4244: 'argumento': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+c:\users\arsamrei\source\repos\pract3\pract3\source.cpp(88): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
+c:\users\arsamrei\source\repos\pract3\pract3\source.cpp(93): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
+c:\users\arsamrei\source\repos\pract3\pract3\source.cpp(95): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
+c:\users\arsamrei\source\repos\pract3\pract3\source.cpp(106): warning C4326: el tipo de valor devuelto de 'main' debe ser 'int' en lugar de 'void'
+  Generando código
+  1 of 23 functions ( 4.3%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    1 functions had inline decision re-evaluated but remain unchanged
+  Generación de código finalizada
+  Pract3.vcxproj -> C:\Users\arsamrei\source\repos\Pract3\Release\Pract3.exe

@@ -4,11 +4,16 @@
 #include <time.h>
 #include <utilidades.h>
 
-static float ojox = 3.0;
-static float ojoy = 6.0;
+static float ojox = 0.0;
+static float ojoy = 100.0;
 static float ojoz = 0.0;
 static float velocidad = 0.0;
 static float angulo = 0.0;
+static float ancho = 1.0;
+static float tramos = 30;
+static float seno = 0;
+static float inc = 0.7; //incremento para la funcion que calcula los senos
+static float valores[10] = { 1, 0.5, 0, -0.5, 0, 0.5, 1, 0.5, 0, 0.5 };
 
 static GLuint estrella;
 static GLuint figura;
@@ -34,16 +39,37 @@ void display()
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
 
-	gluLookAt(ojox, ojoy, ojoz, 0, 0, 0, 1, 0, 0);
+	gluLookAt(ojox, ojoy, ojoz, 0, 0, 0, 0, 0, 1);
 
-	GLfloat v0[3] = { -0.1, 0.0, -0.5 };
-	GLfloat v1[3] = { 0.1, 0.0, -0.5 };
-	GLfloat v2[3] = { 0.1, 0.0, 0.5 };
-	GLfloat v3[3] = { -0.1, 0.0, 0.5 };
+	GLfloat v0 [3] = { 0,0,0 - ancho };
+	GLfloat v1 [3] = { 0,0,0 + ancho };
+	GLfloat v2 [3] = { 0,0,0 + ancho };
+	GLfloat v3 [3] = { 0,0,0 - ancho };
+
+	for (int i = 0; i < tramos; i++) {
+		for (int j = 0; j < 3; j++) {
+			v0[j] = v3[j];
+			v1[j] = v2[j];
+		}
+
+		v2[0] = valores[i%10] + ancho;
+		v2[2] = v2[2] - 0.5;
+		v3[0] = valores[i % 10] - ancho;
+		v3[2] = v2[2] - 0.5;
+
+		glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+		glColor3f(1.0, 0.0, 0.0);
+		quad(v0, v1, v2, v3);
+	}
+
+	GLfloat u0[3] = { -0.1, 0.0, -0.5 };
+	GLfloat u1[3] = { 0.1, 0.0, -0.5 };
+	GLfloat u2[3] = { 0.1, 0.0, 0.5 };
+	GLfloat u3[3] = { -0.1, 0.0, 0.5 };
 
 	glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
-	glColor3f(1.0, 0.0, 0.0);
-	quad(v3, v2, v1, v0);
+	glColor3f(0.0, 1.0, 0.0);
+	quad(u3, u2, u1, u0);
 
 
 
@@ -94,7 +120,7 @@ void reshape(GLint w, GLint h)
 	double cateto1 = sqrt(ojox * ojox + ojoy * ojoy + ojoz * ojoz);
 	printf("%f", asin(1 / (cateto1)) * (180 / PI));
 	gluPerspective(2 * asin(1 / (cateto1)) * (180 / PI), razon, 1, 100);*/
-	gluPerspective(10.0, 1.0, 0.1, 100.0);
+	gluPerspective(10.0, 1.0, 0.1, 10000.0);
 	
 }
 
